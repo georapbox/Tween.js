@@ -1,0 +1,158 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+.clear {
+    clear: both;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 100%;
+}
+
+a {
+    color: #558CBD;
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: underline;
+}
+
+h1, h2, h3 {
+    font-family: 'Roboto Condensed', sans-serif;
+    font-weight: 400;
+    margin: 20px 0 10px 0;
+}
+
+h2 {
+    font-size: 1.17em;
+    color: #434343;
+}
+h2 span {
+    font-weight: 300;
+}
+h2 span#durationOutput {
+    color: #558CBD;
+}
+
+#header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 44px;
+    background: #f8f8f8;
+    border-bottom: 1px solid #E7E7E7;
+    z-index: 10;
+}
+#header h1 {
+    font-size: 1.50em;
+    letter-spacing: -0.02em;
+    line-height: 1;
+    margin: 9px 0 0 0;
+    color: #5E5E5E;
+}
+#header h1 span {
+    color: #888;
+    font-weight: 300;
+/*    font-size: 0.80em;*/
+}
+
+#footer {
+    border-top: 1px solid #E7E7E7;
+    padding: 15px 0;
+    color: #666;
+}
+
+#main {
+    margin-top: 60px;
+}
+.container {
+    width: 960px;
+    margin: 0 auto;
+}
+.col-1, .col-2 {
+    float: left;
+}
+.col-1 {
+    width: 600px;
+}
+.col-2 {
+    width: 360px;
+}
+p {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1.00em;
+    font-weight: 300;
+}
+.jumbotron {
+    font-size: 1.50em;
+    font-weight: 300;
+    color: #666;
+    padding: 15px 0;
+}
+
+/* Code block */
+pre {
+	overflow-x: auto;
+	padding: 20px 25px;
+	margin-bottom: 25px;
+	font-size: 1.00em;
+	color: #454545;
+	background-color: #F5F7F7;
+	background-image: url(../images/blueprint-dark.png);
+	background-repeat: repeat;
+	border-left: 5px solid #558CBD;
+}
+pre.small {
+    width: 530px;
+    padding: 10px 15px;
+}
+pre .line-number {
+	font-size: 0.90em;
+	float: left;
+  	margin: 0 1em 0 -1em;
+  	border-right: 1px solid #ccc;
+  	text-align: right;
+  	color: #708090;
+}
+pre .line-number span {
+  	display: block;
+  	padding: 0 0.5em 0 1em;
+}
+pre .cl {
+  	display: block;
+  	clear: both;
+}
+pre span.comment { color:#708090; }
+pre span.highlight { font-weight:bold; }
+pre span.declare { color:#0095DD; }
+pre span.string { color:#690; }
+pre span.bool { color:#B80000; }
+pre span.param { color:#f07207; }
+
+.durationPlace {
+    color: #0095DD;
+}
+
+.example_path {
+	position: relative;
+	overflow: hidden;
+	width: 560px;
+	height: 30px;
+	border: 1px solid #a7a7a7;
+    margin-bottom: 10px;
+}
+
+.example_path .example_block {
+	position: absolute;
+	background-color: #428BCA;
+	width: 30px;
+	height: 20px;
+	padding-top: 10px;
+	text-align: center;
+	color: #fff;
+	font-size: 10px;
+	white-space: nowrap;
+}

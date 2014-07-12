@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tween.js Demo</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link href='http://fonts.googleapis.com/css?family=Roboto+Condensed:400,300,700' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600' rel='stylesheet' type='text/css'>
+</head>
+<body>
+    <div id="header">
+        <div class="container">
+            <h1>Tween.js <span>- Animations micro library</span></h1>
+        </div>
+    </div>   
+   
+    <div id="main">
+        <div class="container">  
+            <p class="jumbotron">Tween.js is a micro (experimental) library for animations using <a href="https://developer.mozilla.org/en/docs/Web/API/window.requestAnimationFrame" target="_blank">requestAnimationFrame</a> where possible for better performance.</p>
+            <h2>Example usage</h2>
+<pre>
+<span class="declare">function</span> move(<span class="param">element, duration, delta</span>) {
+    <span class="string">'use strict'</span>;
+    <span class="declare">var</span> to = <span class="bool">500</span>;
+  
+    <span class="declare">Tween</span>.animate({
+        delay: <span class="bool">10</span>,
+        duration: <span class="param">duration</span>,
+        delta: <span class="param">delta</span>,
+        step: function (delta) {
+            <span class="param">element</span>.style.left = to * delta + <span class="string">'px'</span>;
+        }
+    });
+}
+                  
+<span class="declare">var</span> el = document.querySelector(<span class="string">'.example_path'</span>);
+
+el.addEventListener(<span class="string">'click'</span>, <span class="declare">function</span> () {
+    <span class="string">'use strict'</span>;
+    <span class="declare">var</span> self = this;
+
+    move(self.children[0], <span class="bool">2000</span>, <span class="declare">Tween</span>.easeOut(<span class="declare">function</span> (<span class="param">p</span>) {
+        return <span class="declare">Tween</span>.bounce(p);
+    }));
+}, <span class="bool">false</span>);
+</pre>
+            
+            <!-- LEFT COL -->
+            <div class="col-1">
+                <!-- DEMOS -->
+                <!-- Linear -->
+                <h2>Linear</h2>
+                <div id="demo10" class="example_path">
+                    <div class="example_block"></div>
+                </div>
+
+<pre class="small">
+move(self.children[0], <span class="durationPlace">2000</span>, Tween.linear);
+</pre>
+                <!-- /Linear -->
+
+                <!-- Quad -->
+                <h2>Quad</h2>
+                <div id="demo11" class="example_path">
+                    <div class="example_block"></div>
+                </div>
+
+<pre class="small">
+move(self.children[0], <span class="durationPlace">2000</span>, Tween.quad);
+</pre>
+                <!-- /Quad -->
+
+                 <!-- Circ -->
+                <h2>Circ</h2>
+                <div id="demo12" class="example_path">
+                    <div class="example_block"></div>
+                </div>
+
+<pre class="small">
+move(self.children[0], <span class="durationPlace">2000</span>, Tween.circ);
+</pre>
+                <!-- /Circ -->
+
+                <!-- bounce -->
+                <h2>Bounce</h2>
+                <div id="demo2" class="example_path">
+                    <div class="example_block"></div>
+                </div>
+
+<pre class="small">
+move(self.children[0], <span class="durationPlace">2000</span>, Tween.bounce);
+</pre>
+                <!-- /bounce -->
+
+                <!-- EaseOut bounce -->
+                <h2>EaseOut bounce</h2>
+                <div id="demo1" class="example_path">
+                    <div class="example_block"></div>
+                </div>
+
+<pre class="small">
+move(self.children[0], <span class="durationPlace">2000</span>, Tween.easeOut(Tween.bounce));
+</pre>
+                <!-- /EaseOut bounce -->
+
+                <!-- EaseInOut bounce -->
+                <h2>EaseInOut bounce</h2>
+                <div id="demo3" class="example_path">
+                    <div class="example_block"></div>
+                </div>
+
+<pre class="small">
+move(self.children[0], <span class="durationPlace">2000</span>, Tween.easeInOut(Tween.bounce));
+</pre>
+                <!-- /EaseInOut bounce -->
+
+                <!-- Back -->
+                <h2>Back</h2>
+                <div id="demo4" class="example_path">
+                    <div class="example_block"></div>
+                </div>
+
+<pre class="small">
+move(self.children[0], <span class="durationPlace">2000</span>, function (p) {
+    return Tween.back(p, 1.5);
+});
+</pre>
+                <!-- /Back -->
+
+                <!-- EaseOut back -->
+                <h2>EaseOut back</h2>
+                <div id="demo5" class="example_path">
+                    <div class="example_block"></div>
+                </div>
+
+<pre class="small">
+move(self.children[0], <span class="durationPlace">2000</span>, Tween.easeOut(function (p) {
+    return Tween.back(p, 1.5);
+}));
+</pre>
+                <!-- /EaseOut back -->
+
+                <!-- EaseInOut back -->
+                <h2>EaseInOut back</h2>
+                <div id="demo6" class="example_path">
+                    <div class="example_block"></div>
+                </div>
+
+<pre class="small">
+move(self.children[0], <span class="durationPlace">2000</span>, Tween.easeInOut(function (p) {
+    return Tween.back(p, 1.5);
+}));
+</pre>
+                <!-- /EaseInOut back -->
+
+                <!-- Elastic -->
+                <h2>Elastic</h2>
+                <div id="demo7" class="example_path">
+                    <div class="example_block"></div>
+                </div>
+
+<pre class="small">
+move(self.children[0], <span class="durationPlace">2000</span>, function (p) {
+    return Tween.elastic(p, 1.5);
+});
+</pre>
+                <!-- /Elastic -->
+
+                <!-- EaseOut elastic -->
+                <h2>EaseOut elastic</h2>
+                <div id="demo8" class="example_path">
+                    <div class="example_block"></div>
+                </div>
+
+<pre class="small">
+move(self.children[0], <span class="durationPlace">2000</span>, Tween.easeOut(function (p) {
+    return Tween.elastic(p, 1.5);
+}));
+</pre>
+                <!-- /EaseOut elastic -->
+
+                <!-- EaseInOut elastic -->
+                <h2>EaseInOut elastic</h2>
+                <div id="demo9" class="example_path">
+                    <div class="example_block"></div>
+                </div>
+
+<pre class="small">
+move(self.children[0], <span class="durationPlace">2000</span>, Tween.easeInOut(function (p) {
+    return Tween.elastic(p, 1.5);
+}));
+</pre>
+                <!-- /EaseInOut elastic -->
+            </div>
+            <!-- /LEFT COL -->
+            
+            <!-- RIGHT COL -->
+            <div class="col-2">
+                <h2>Animation duration: <span id="durationOutput">2000</span><span>ms</span></h2>
+                <input id="durationInput" type="range" min="1000" max="8000" value="2000" style="width:250px;"><br/>
+            </div>
+            <!-- /RIGHT COL -->
+            
+            <div class="clear"></div>
+            
+            <div id="footer">
+                <p>@author <a href="http://georap.gr" target="_blank">George Raptis</a></p>
+            </div>
+        </div>   
+    </div>
+
+    <script src="../dist/Tween.min.js"></script>
+    <script src="js/demo.js"></script>
+</body>
+</html>
